@@ -5,7 +5,7 @@ void insert(std::vector<std::string> &command, std::list<std::string> &list) {
         std::cout << "Invalid command." << std::endl;
         return;
     }
-    if (command.size() == 12) {
+    if (list.size() == 12) {
         std::cout << "Inventory is full." << std::endl;
         return;
     }
