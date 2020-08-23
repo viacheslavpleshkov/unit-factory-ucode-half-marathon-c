@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/countUniqueWords.h
+iostream
+-
+string
+-
+regex
+-
+sstream
+-
+fstream
+-
+set
+-
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/createFile.cpp
+countUniqueWords.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/countUniqueWords.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/errors.cpp
+countUniqueWords.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/countUniqueWords.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/parsFile.cpp
+countUniqueWords.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint02/t01/src/countUniqueWords.h
+
