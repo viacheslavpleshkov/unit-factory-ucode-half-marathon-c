@@ -1,6 +1,6 @@
 #include "stdAlgoV2.h"
 
-std::string creaneNameNewFile(const std::string& str) {
+std::string createNameNewFile(const std::string& str) {
     std::stringstream ss(str);
     std::string temp;
     std::string newFile;

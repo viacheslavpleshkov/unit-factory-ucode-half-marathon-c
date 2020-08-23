@@ -18,12 +18,10 @@ int main(int argc, char **argv) {
 
     errorOpenFile(file);
 
-    while (getline(file, temp)) {
-        if (checkForName(temp)) {
+    while (getline(file, temp))
+        if (checkForName(temp))
             names.push_front(temp);
-            forward_size++;
-        }
-    }
+    forward_size = std::distance(names.begin(), names.end())
     errorForwardSize(forward_size);
     std::cout << "size: " << forward_size << "\n";
     pars(names);

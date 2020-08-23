@@ -1,8 +1,8 @@
-#include "stdAlgoV2.h"
+#include "stdAlgoV1.h"
 
 void error(int argc) {
-    if (argc == 1) {
-        std::cerr << "usage: ./stdAlgoV2 [file_name]\n";
+    if (argc != 2) {
+        std::cerr << "usage: ./stdAlgoV1 [file_name]\n";
         exit(1);
     }
 }

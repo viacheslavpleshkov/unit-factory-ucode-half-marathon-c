@@ -6,12 +6,12 @@
 #include <fstream>
 #include <forward_list>
 #include <algorithm>
-#include "sstream"
+#include <sstream>
 
 void error(int argc);
 void errorForwardSize(int forward_size);
 void errorOpenFile(std::ifstream &file);
-std::string creaneNameNewFile(const std::string& str);
+std::string createNameNewFile(const std::string& str);
 void parseAndPrint(std::forward_list<std::string> &names, std::string file);
 
 #endif
