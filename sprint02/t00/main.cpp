@@ -7,7 +7,6 @@ int main(int argc, char **argv) {
 
     errorOpenFile(file);
     parsFile(file, names);
-    std::cout << std::distance(names.begin(), names.end());
     errorNameSize(std::distance(names.begin(), names.end()));
     createFile(argv[1], names);
     file.close();

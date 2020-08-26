@@ -1,6 +1,6 @@
 #include "countUniqueWords.h"
 
-void createFile(std::string file_name, std::multiset<std::string> names) {
+void createFile(std::string file_name, std::multiset <std::string> names) {
     std::string temp;
     std::stringstream stringstream;
 
@@ -8,7 +8,12 @@ void createFile(std::string file_name, std::multiset<std::string> names) {
     getline(stringstream, temp, '.');
     std::ofstream newfile(temp + "_mod.txt");
 
-    for (auto item : names)
-        newfile << item << std::endl;
+    std::string temp_item;
+    for (auto item = names.begin(); item != names.end(); item++) {
+        if (*item != temp_item)
+            newfile << *item << ": " << names.count(*item) << std::endl;
+        temp_item = *item;
+    }
+
     newfile.close();
 }

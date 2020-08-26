@@ -6,7 +6,7 @@
 #include <regex>
 #include <sstream>
 #include <fstream>
-#include <set>
+#include <map>
 
 void errors(int argc);
 void errorOpenFile(std::ifstream &file);
