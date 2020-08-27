@@ -6,14 +6,6 @@ Draugr::Draugr(int health) : Draugr::Draugr(health, 50) {}
 
 Draugr::Draugr(double health, int frostResist) : m_health{health}, m_frostResist{frostResist} {}
 
-Draugr::Draugr(Draugr& other) : Draugr::Draugr(other.m_health, other.m_frostResist) {
-    std::cout << "Copy constructor was called\n";
-}
-
-Draugr::Draugr(Draugr&& other) : Draugr::Draugr(other.m_health, other.m_frostResist) {
-    std::cout << "Move constructor was called\n";
-}
-
 void Draugr::setName(const std::string&& name) {
     m_name = name;
 }

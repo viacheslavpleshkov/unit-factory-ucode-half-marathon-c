@@ -13,9 +13,9 @@ public:
 
     Draugr(double health, int frostResist = 50);
 
-    Draugr(Draugr &other);
+    Draugr(Draugr &other) = delete;
 
-    Draugr(Draugr &&other);
+    Draugr(Draugr &&other) = delete;
 
     void setName(const std::string &&name);
 
@@ -30,5 +30,3 @@ private:
 void error(int argc);
 
 void splitName(std::string &name1, std::string &name2, std::string arg);
-
-#endif //DRAUGR_H_
