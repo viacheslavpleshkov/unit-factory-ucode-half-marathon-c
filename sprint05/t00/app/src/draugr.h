@@ -14,5 +14,3 @@ private:
     double m_health;
     const int m_frostResist;
 };
-
-#endif //DRAUGR_H_

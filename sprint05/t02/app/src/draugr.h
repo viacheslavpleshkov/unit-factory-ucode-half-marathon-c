@@ -30,5 +30,3 @@ private:
 void error(int argc);
 
 void splitName(std::string &name1, std::string &name2, std::string arg);
-
-#endif //DRAUGR_H_

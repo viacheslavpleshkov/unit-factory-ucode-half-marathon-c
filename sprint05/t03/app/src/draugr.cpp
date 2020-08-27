@@ -11,8 +11,8 @@ void Draugr::setName(const std::string&& name) {
 }
 
 void Draugr::shoutPhrase(int shoutNumber) const {
-    std::cout << "Draugr with "<< m_health << " healthand " << m_frostResist << "% frost resist was born!\n";
-    std::cout << "Draugr (" << m_health << " health, " << m_frostResist << "% frost resist) shouts:\n";
+    std::cout << "Draugr with "<< m_health << " healt hand " << m_frostResist << "% frost resist was born!\n";
+    std::cout << "Draugr " << m_name << " (" << m_health << " health, " << m_frostResist << "% frost resist) shouts:\n";
     if (shoutNumber == 0)
         std::cout << "Qiilaan Us Dilon!\n";
     else if (shoutNumber == 1)

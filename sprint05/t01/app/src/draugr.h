@@ -19,4 +19,3 @@ private:
 };
 
 void error(int argc);
-#endif //DRAUGR_H_

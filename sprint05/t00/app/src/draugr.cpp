@@ -22,4 +22,6 @@ void Draugr::shoutPhrase(int shoutNumber) const {
         std::cout << "Aav Dilon!\n";
     else if (shoutNumber == 8)
         std::cout << "Sovngarde Saraan!\n";
+    else
+        std::cout << "Invalid shoutNumber\n";
 }
