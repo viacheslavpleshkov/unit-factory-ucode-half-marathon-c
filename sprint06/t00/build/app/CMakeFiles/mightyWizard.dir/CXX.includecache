@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../app/src/AbstractWizard.h
+Food.h
+../app/src/Food.h
+iostream
+-
+map
+-
+
+../app/src/Food.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint06/t00/app/main.cpp
+AbstractWizard.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint06/t00/app/AbstractWizard.h
+
