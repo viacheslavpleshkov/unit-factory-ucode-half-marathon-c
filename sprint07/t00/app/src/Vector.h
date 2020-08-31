@@ -7,15 +7,13 @@ namespace CBL {
     template<class T>
     class Vector {
     public:
-        using iterator= T*;
+        using iterator = T*;
 
-        Vector(size_t(4));
+        Vector();
         explicit Vector(size_t size) {}
         Vector(size_t size, const T& value);
         Vector(iterator first, iterator last);
-        Vector(const std::initializer_list<T>& lst) {
-            std::cout << lst.begin() << " | " << lst.end() << " | "<< lst.size() << "\n";
-        }
+        Vector(const std::initializer_list<T>& lst);
         Vector(const Vector<T>& other);
         ~Vector() = default;
 

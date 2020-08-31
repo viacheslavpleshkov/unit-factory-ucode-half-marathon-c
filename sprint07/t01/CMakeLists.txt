@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18.1)
 
-project(Vector)
+project(basicString)
 
 add_subdirectory(app)
