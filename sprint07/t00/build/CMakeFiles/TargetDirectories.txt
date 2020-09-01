@@ -1,8 +1,0 @@
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/CMakeFiles/rebuild_cache.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/CMakeFiles/edit_cache.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/app/CMakeFiles/rebuild_cache.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/app/CMakeFiles/edit_cache.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/app/CMakeFiles/Vector.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/app/utils/CMakeFiles/rebuild_cache.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/app/utils/CMakeFiles/edit_cache.dir
-/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint07/t00/build/app/utils/CMakeFiles/algorithmUtils.dir
