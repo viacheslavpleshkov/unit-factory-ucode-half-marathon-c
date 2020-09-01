@@ -11,7 +11,7 @@ add_executable(
         src/createCity.cpp
         src/printCity.cpp
         src/algorithmCity.cpp
-        rc/insertCity.cpp
+        src/insertCity.cpp
         src/error.cpp
 )
 

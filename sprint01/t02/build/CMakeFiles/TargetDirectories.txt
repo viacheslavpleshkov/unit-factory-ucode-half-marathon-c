@@ -1,0 +1,5 @@
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/build/CMakeFiles/rebuild_cache.dir
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/build/CMakeFiles/edit_cache.dir
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/build/CMakeFiles/visitAll.dir
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/build/src/CMakeFiles/rebuild_cache.dir
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/build/src/CMakeFiles/edit_cache.dir

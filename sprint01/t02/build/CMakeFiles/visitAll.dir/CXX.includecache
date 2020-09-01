@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/main.cpp
+src/visitAll.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/algorithmCity.cpp
+visitAll.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/createCity.cpp
+visitAll.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/error.cpp
+visitAll.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/insertCity.cpp
+visitAll.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/printCity.cpp
+visitAll.h
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+
+/Users/spleshkov/Desktop/unit-factory-ucode-half-marathon-c/sprint01/t02/src/visitAll.h
+iostream
+-
+string
+-
+vector
+-
+deque
+-
+sstream
+-
+
