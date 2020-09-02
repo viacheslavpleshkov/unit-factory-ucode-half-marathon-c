@@ -1,4 +1,11 @@
-class interfaceFamily {
+#pragma once
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class interfaceHuman {
 public:
     virtual string getFirstName() = 0;
     virtual void setFirstName(string firstName) = 0;
@@ -13,46 +20,38 @@ protected:
     int m_age;
 };
 
-class Mother : public interfaceFamily {
+class People : public interfaceHuman {
 public:
-    Mother() = default;
+    People() = default;
+    ~People() = default;
 
     string getFirstName() override {
-        return m_firstName;
+        return this->m_firstName;
     }
 
     void setFirstName(string firstName) override {
-        m_firstName = firstName;
+        this->m_firstName = firstName;
     }
 
     string getLastName() override {
-        return m_lastName;
+        return this->m_lastName;
     }
+
     void setLastName(string lastName) override {
-        m_lastName = lastName;
+        this->m_lastName = lastName;
     }
+
     int getAge() override{
-        return m_age;
+        return this->m_age;
     }
+
     void setAge(int age) override {
-        m_age = age;
+        this->m_age = age;
     }
+
     void showAll() {
         std::cout << "First name: " << m_firstName << std::endl;
         std::cout << "Last name: " << m_lastName << std::endl;
         std::cout << "Age: " << m_age << std::endl;
     }
 };
-
-class Son : public Mother {
-
-};
-
-int main() {
-    Mother mother;
-    mother.setFirstName("First Name");
-    mother.setLastName("Last Name");
-    mother.setAge(18);
-    mother.showAll();
-
-}
