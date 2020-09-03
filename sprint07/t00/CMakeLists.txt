@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.1)
+project(vector LANGUAGES CXX)
 
-project(Vector)
-
+set(CMAKE_CXX_EXTENSIONS OFF)
 add_subdirectory(app)
