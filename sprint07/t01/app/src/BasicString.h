@@ -7,7 +7,7 @@ namespace CBL {
     class BasicString {
     public:
         using iterator = T *;
-        static const size_t npos = -1ul
+        static const size_t npos = -1ul;
 
         BasicString();
         BasicString(const BasicString<T>& str);

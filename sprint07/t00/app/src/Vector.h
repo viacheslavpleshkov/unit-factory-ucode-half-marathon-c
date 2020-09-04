@@ -62,6 +62,15 @@ namespace CBL {
     Vector<T>::~Vector() {
         delete[] m_buffer;
     }
+    // iterators
+    template<class T>
+    T* Vector<T>::begin() const {
+        return m_buffer;
+    }
+    template<class T>
+    T* Vector<T>::end() const {
+        return m_buffer + m_size;
+    }
     // capacity
     template<class T>
     size_t Vector<T>::size() const {
