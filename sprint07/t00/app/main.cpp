@@ -13,21 +13,9 @@ void Print(T &container) {
 }
 
 static bool CheckConstructors() {
-    {
-        Vector<int> v = {1, 2, 3};
-        Vector<int> v1({1, 2, 3});
-    }
-    {
-        Vector<int> v(4);
-    }
-    {
-        Vector<int> v(10, 2);
-    }
-    {
-        Vector<int> v = {1, 2, 3};
-        Vector<int> v1(v);
-        Vector<int> v2(v.begin(), v.end());
-    }
+        Vector<int> v(10, 10);
+
+    Print(v);
     return true;
 }
 
