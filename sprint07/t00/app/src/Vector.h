@@ -49,7 +49,7 @@ namespace CBL {
         iterator erase(iterator first, iterator last);
         void clear();
     };
-    //<======================basic======================>
+    //<================================basic=================================>
     /**
      *
      * Set size vector
@@ -97,7 +97,7 @@ namespace CBL {
      * @param lst
      */
     template<class T>
-    Vector<T>::Vector(const std::initializer_list<T> &lst) : Vector(lst.begin(), lst.end()) {
+    Vector<T>::Vector(const std::initializer_list<T> &lst) : Vector(lst.size(), lst.size()) {
         auto it = lst.begin();
         for (size_t i = 0; it != lst.end(); ++it, ++i)
             m_buffer[i] = *it;
@@ -123,7 +123,100 @@ namespace CBL {
     Vector<T>::~Vector() {
         delete[] m_buffer;
     }
-    //<======================iterators======================>
+    //<==============================end basic===============================>
+    //<===============================operator===============================>
+    /**
+     *
+     * Operator =
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template<class T>
+    Vector<T> & Vector<T>::operator=(const Vector<T> &other) {
+        return Vector(other);
+    }
+    /**
+     *
+     * Operator ==
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template<class T>
+    bool Vector<T>::operator==(const Vector<T> &other) const {
+//        if (m_size != other.m_size)
+//            return false;
+//        for (size_t i = 0; i < other.m_size && i < m_size; i++)
+//            if (m_buffer[i] != other[i])
+//                return false;
+//        return true;
+        return (*this == other);
+    }
+    /**
+     *
+     * Operator !=
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template<class T>
+    bool Vector<T>::operator!=(const Vector<T> &other) const {
+        return !(*this == other);
+    }
+    /**
+     *
+     * Operator <
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template<class T>
+    bool Vector<T>::operator<(const Vector<T> &other) const {
+//        for (size_t i = 0; i < other.m_size && i < m_size; i++)
+//            if (m_buffer[i] < other[i])
+//                return true;
+//        if (m_size < other.m_size)
+//            return true;
+//        return false;
+        return !(this > other) && this != other;
+
+    }
+    /**
+     *
+     * Operator >
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template <class T>
+    bool Vector<T>::operator>(const Vector<T> &other) const {
+        return !(this < other) && this != other;
+    }
+    /**
+     *
+     * Operator <=
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template <class T>
+    bool Vector<T>::operator<=(const Vector<T> &other) const {
+        return this < other || this == other;
+    }
+    /**
+     *
+     * Operator >=
+     * @tparam T
+     * @param other
+     * @return
+     */
+    template <class T>
+    bool Vector<T>::operator>=(const Vector<T> &other) const {
+        return this > other || this == other;
+    }
+    //<=============================end operator=============================>
+    //<==============================iterators===============================>
     /**
      *
      * Vector first element
@@ -144,7 +237,8 @@ namespace CBL {
     T* Vector<T>::end() const {
         return m_buffer + m_size;
     }
-    //<======================capacity======================>
+    //<=============================end iterators============================>
+    //<===============================capacity===============================>
     /**
      *
      * Get variable m_size
@@ -176,4 +270,108 @@ namespace CBL {
         return m_size == 0;
     }
 
+    /**
+     *
+     * Malloc size and set all value
+     * @tparam T
+     * @param size
+     * @param value
+     */
+    template<class T>
+    void Vector<T>::resize(size_t size, const T &value) {
+        for (size_t i = m_size; i < size; ++i)
+            push_back(value);
+        m_size = size;
+        m_capacity = size;
+    }
+    /**
+     *
+     * Malloc new capacity
+     * @tparam T
+     * @param size
+     */
+    template<class T>
+    void Vector<T>::reserve(size_t size) {
+        if (m_capacity < size) {
+            T* temp = new T[size];
+            memcpy(temp, m_buffer, m_size * sizeof(*m_buffer));
+            delete[] m_buffer;
+            m_buffer = temp;
+            m_capacity = size;
+        }
+    }
+    //<=============================end capacity=============================>
+    //<============================element access============================>
+    /**
+     *
+     * Get operator index
+     * @tparam T
+     * @param index
+     * @return
+     */
+    template<class T>
+    T & Vector<T>::operator[](size_t index) const {
+        return m_buffer[index];
+    }
+    /**
+     *
+     * Get index
+     * @tparam T
+     * @param index
+     * @return
+     */
+    template<class T>
+    T & Vector<T>::at(size_t index) const{
+        if (index > m_size)
+            throw std::out_of_range("CBL::Vector");
+        return m_buffer[index];
+    }
+    /**
+     *
+     * Get m_buffer
+     * @tparam T
+     * @return
+     */
+    template<class T>
+    T * Vector<T>::data() const {
+        return m_buffer;
+    }
+    //<==========================end element access==========================>
+    //<===============================modifiers==============================>
+    /**
+     *
+     * Push element in vector
+     * @tparam T
+     * @param value
+     */
+    template<class T>
+    void Vector<T>::push_back(const T &value) {
+        T* temp_buffer = new T[m_size + 1];
+        memcpy(temp_buffer, m_buffer, m_size * sizeof(*m_buffer));
+        delete[] m_buffer;
+        m_buffer = temp_buffer;
+        m_buffer[m_size] = value;
+        m_capacity = m_size + 1;
+        m_size = m_size + 1;
+    }
+    /**
+     *
+     * Delete element in vector
+     * @tparam T
+     */
+    template<class T>
+    void Vector<T>::pop_back() {
+        if (m_size != 0)
+            m_size--;
+    }
+    /**
+     *
+     * Clear vector
+     * @tparam T
+     */
+    template<class T>
+    void Vector<T>::clear() {
+        m_size = 0;
+    }
+    //<============================end modifiers=============================>
 } // end namespace CBL
