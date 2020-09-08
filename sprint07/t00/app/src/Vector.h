@@ -97,11 +97,7 @@ namespace CBL {
      * @param lst
      */
     template<class T>
-    Vector<T>::Vector(const std::initializer_list<T> &lst) : Vector(lst.size(), lst.size()) {
-        auto it = lst.begin();
-        for (size_t i = 0; it != lst.end(); ++it, ++i)
-            m_buffer[i] = *it;
-    }
+    Vector<T>::Vector(const std::initializer_list<T>& lst) : Vector(iterator(lst.begin()), iterator(lst.end())) {};
     /**
      *
      * :)
@@ -366,12 +362,73 @@ namespace CBL {
     }
     /**
      *
+     * Insert value in iterator
+     * @tparam T
+     * @param pos
+     * @param value
+     * @return
+     */
+    template <class T>
+    T* Vector<T>::insert(iterator pos, const T &value) {
+        size_t i = pos - begin();
+        size_t size = m_size;
+        if (i > size) {
+            resize(i + 1);
+            size = i;
+        } else
+            push_back(0);
+        for (size_t j = m_size; j > i; j--)
+            m_buffer[j] = m_buffer[j - 1];
+        m_buffer[i] = value;
+        m_size = size + 1;
+        return &(this->at(i));
+    }
+    /**
+     *
+     * Clear one element in vector iterator
+     * @tparam T
+     * @param pos
+     * @return
+     */
+    template <class T>
+    T* Vector<T>::erase(iterator pos) {
+        if (begin() == end())
+            return end();
+        size_t i = pos - begin();
+        while (i < m_size) {
+            m_buffer[i] = m_buffer[i + 1];
+            i++;
+        }
+        m_size--;
+        if (pos == begin())
+            return begin();
+        if (m_size == i - 1)
+            return end();
+        return pos;
+    }
+
+    /**
+     *
+     * Clear many element in vector iterator
+     * @tparam T
+     * @param first
+     * @param last
+     * @return
+     */
+    template<class T>
+    T* erase(T* first, T* last) {
+        for (size_t i = 0; i < last - first; i++)
+            erase(first);
+        return first;
+    }
+    /**
+     *
      * Clear vector
      * @tparam T
      */
     template<class T>
     void Vector<T>::clear() {
-        m_size = 0;
+        erase(begin(), end());
     }
     //<============================end modifiers=============================>
 } // end namespace CBL
