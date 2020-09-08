@@ -57,7 +57,9 @@ namespace CBL {
      * @param size
      */
     template<class T>
-    Vector<T>::Vector(size_t size) : m_size(size), m_capacity(size), m_buffer(new T[size]) {}
+    Vector<T>::Vector(size_t size) : m_size(size), m_capacity(size), m_buffer(new T[size]) {
+
+    }
     /**
      *
      * The empty constructor
@@ -141,13 +143,12 @@ namespace CBL {
      */
     template<class T>
     bool Vector<T>::operator==(const Vector<T> &other) const {
-//        if (m_size != other.m_size)
-//            return false;
-//        for (size_t i = 0; i < other.m_size && i < m_size; i++)
-//            if (m_buffer[i] != other[i])
-//                return false;
-//        return true;
-        return (*this == other);
+        if (m_size != other.m_size)
+            return false;
+        for (size_t i = 0; i < other.m_size && i < m_size; i++)
+            if (m_buffer[i] != other[i])
+                return false;
+        return true;
     }
     /**
      *
@@ -175,7 +176,7 @@ namespace CBL {
 //        if (m_size < other.m_size)
 //            return true;
 //        return false;
-        return !(this > other) && this != other;
+        return !(*this > other) && (*this != other);
 
     }
     /**
@@ -187,7 +188,7 @@ namespace CBL {
      */
     template <class T>
     bool Vector<T>::operator>(const Vector<T> &other) const {
-        return !(this < other) && this != other;
+        return !(*this < other) && (*this != other);
     }
     /**
      *
@@ -198,7 +199,7 @@ namespace CBL {
      */
     template <class T>
     bool Vector<T>::operator<=(const Vector<T> &other) const {
-        return this < other || this == other;
+        return (*this < other) || (*this == other);
     }
     /**
      *
@@ -209,7 +210,7 @@ namespace CBL {
      */
     template <class T>
     bool Vector<T>::operator>=(const Vector<T> &other) const {
-        return this > other || this == other;
+        return (*this > other) || (*this == other);
     }
     //<=============================end operator=============================>
     //<==============================iterators===============================>

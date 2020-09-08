@@ -5,10 +5,13 @@
 namespace CBL {
     template<class T>
     class BasicString {
+    protected:
+        size_t m_size{0};
+        T* m_buffer{nullptr};
     public:
-        using iterator = T *;
+        using iterator = T*;
         static const size_t npos = -1ul;
-
+        //basic
         BasicString();
         BasicString(const BasicString<T>& str);
         BasicString(const BasicString<T>& str, size_t pos, size_t len = npos);
@@ -48,8 +51,77 @@ namespace CBL {
         const T* c_str() const;
         virtual int compare(constBasicString<T>& str) const;
         virtual int compare(constT* str) const;
-    protected:
-        size_t m_size{0};
-        T* m_buffer{nullptr};
     }
+    //<==============================iterators===============================>
+    /**
+     *
+     * Begin string index
+     * @tparam T
+     * @return
+     */
+    template <class T>
+    T* BasicString<T>::begin() const {
+        return m_buffer[0];
+    }
+    /**
+     *
+     * End string index
+     * @tparam T
+     * @return
+     */
+    template <class T>
+    T* BasicString<T>::end() const {
+        return m_buffer[m_size - 1];
+    }
+    //<============================end iterators=============================>
+    //<==============================capacity================================>
+    template <class T>
+    size_t BasicString<T>::length() const {
+        return
+    }
+    //<============================end capacity==============================>
 }  //end namespace CBL
+template <class T>
+CBL::BasicString<T> operator+(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+CBL::BasicString<T> operator+(const CBL::BasicString<T>& lhs, const T* rhs);
+template <class T>
+CBL::BasicString<T> operator+(const T lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+CBL::BasicString<T> operator+(const CBL::BasicString<T>& lhs, const T rhs);
+template <class T>
+bool operator==(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator==(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator==(const CBL::BasicString<T>& lhs, const T* rhs);
+template <class T>
+bool operator!=(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator!=(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator!=(const CBL::BasicString<T>& lhs, const T* rhs);
+template <class T>
+bool operator<(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator<(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator<(const CBL::BasicString<T>& lhs, const T* rhs);
+template <class T>
+bool operator<=(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator<=(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator<=(const CBL::BasicString<T>& lhs, const T* rhs);
+template <class T>
+bool operator>(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator>(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator>(const CBL::BasicString<T>& lhs, const T* rhs);
+template <class T>
+bool operator>=(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator>=(const T* lhs, const CBL::BasicString<T>& rhs);
+template <class T>
+bool operator>=(const CBL::BasicString<T>& lhs, const T* rhs);
