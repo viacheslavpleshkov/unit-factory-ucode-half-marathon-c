@@ -159,7 +159,7 @@ namespace CBL {
      */
     template<class T>
     bool Vector<T>::operator!=(const Vector<T> &other) const {
-        return !(*this == other);
+        return !(this == other);
     }
     /**
      *
@@ -170,13 +170,12 @@ namespace CBL {
      */
     template<class T>
     bool Vector<T>::operator<(const Vector<T> &other) const {
-//        for (size_t i = 0; i < other.m_size && i < m_size; i++)
-//            if (m_buffer[i] < other[i])
-//                return true;
-//        if (m_size < other.m_size)
-//            return true;
-//        return false;
-        return !(*this > other) && (*this != other);
+        for (size_t i = 0; i < other.m_size && i < m_size; i++)
+            if (m_buffer[i] < other[i])
+                return true;
+        if (m_size < other.m_size)
+            return true;
+        return false;
 
     }
     /**
@@ -188,7 +187,7 @@ namespace CBL {
      */
     template <class T>
     bool Vector<T>::operator>(const Vector<T> &other) const {
-        return !(*this < other) && (*this != other);
+        return !(this < other) && this != other;
     }
     /**
      *
@@ -199,7 +198,7 @@ namespace CBL {
      */
     template <class T>
     bool Vector<T>::operator<=(const Vector<T> &other) const {
-        return (*this < other) || (*this == other);
+        return this < other || this == other;
     }
     /**
      *
@@ -210,7 +209,7 @@ namespace CBL {
      */
     template <class T>
     bool Vector<T>::operator>=(const Vector<T> &other) const {
-        return (*this > other) || (*this == other);
+        return this > other || this == other;
     }
     //<=============================end operator=============================>
     //<==============================iterators===============================>
@@ -429,7 +428,8 @@ namespace CBL {
      */
     template<class T>
     void Vector<T>::clear() {
-        erase(begin(), end());
+        for (auto i = 0; i < begin() - end(); i++)
+            erase(begin());
     }
     //<============================end modifiers=============================>
 } // end namespace CBL
